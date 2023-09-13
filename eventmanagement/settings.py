@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,7 +78,8 @@ WSGI_APPLICATION = "eventmanagement.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://fisatevent_uzpx_user:3xk0vR0WyFjgn7HFdI7qmxLx1YqPGfyh@dpg-ck0nvne3ktkc738kd8v0-a/fisatevent_uzpx')
+    'default': dj_database_url.config(default='postgres: // fisatevent_uzpx_user: 3xk0vR0WyFjgn7HFdI7qmxLx1YqPGfyh@dpg-ck0nvne3ktkc738kd8v0-a/fisatevent_uzpx
+                                      ')
     # "default": {
 
     # "ENGINE": "django.db.backends.sqlite3",
