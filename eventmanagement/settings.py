@@ -79,12 +79,8 @@ WSGI_APPLICATION = "eventmanagement.wsgi.application"
 
 DATABASES = {
     'default': dj_database_url.config(default='postgres: // fisatevent_uzpx_user: 3xk0vR0WyFjgn7HFdI7qmxLx1YqPGfyh@dpg-ck0nvne3ktkc738kd8v0-a/fisatevent_uzpx')
-    # "default": {
-
-    # "ENGINE": "django.db.backends.sqlite3",
-    # "NAME": BASE_DIR / "db.sqlite3",
-    # }
 }
+
 
 
 # Password validation
