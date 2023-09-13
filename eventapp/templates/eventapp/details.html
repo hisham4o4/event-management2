@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="logo not found" width="100px"
+            height="100px" />
+        <nav class="nav-link">
+            <a class="navbox" href="">home</a>
+            <a class="navbox" href="">login</a>
+            <a class="navbox" href="">reg </a>
+
+        </nav>
+    </header>
+    <section id="DET">
+        <div class="DET-card">
+            <label class="boldstuff">Twitter2</label>
+            <h2>{{event.event_title}}</h2>
+            <p class="lab">Location:{{event.location}}</p>
+            <p class="lab">Date:{{event.date}}</p>
+            <p>{{event.description}}</p>
+
+            <h2>Sign up</h2>
+            <form action="" method="POST" class="form">
+                <h3>Apply for this event</h3>
+                {% csrf_token %}
+                {{form.as_p}}
+                <input id="sub" type="submit" value="apply">
+            </form>
+        </div>
+
+    </section>
+    <footer class="foot">
+        <p>&copy; 2023 event registeration system</p>
+    </footer>
+</body>
+
+</html>

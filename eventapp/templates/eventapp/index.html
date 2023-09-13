@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="logo not found" width="100px"
+            height="100px" />
+        <nav class="nav-link">
+            <a class="navbox" href="">home</a>
+            <a class="navbox" href="">login</a>
+            <a class="navbox" href="">reg </a>
+
+        </nav>
+    </header>
+    <section id="event">
+        {% for event in events %}
+        <div class="event-card">
+            <h2 class="event.title">{{event.event_title}}</h2>
+            <p class="event.location">Location:{{event.location}}</p>
+            <p class="event.date">Date:{{event.date}}</p>
+            <a class="detailsbutton" href="{%url 'eventdetails' event.pk %}">Details</a>
+        </div>
+        {% endfor %}
+    </section>
+    <footer class="foot">
+        <p>&copy; 2023 event registeration system</p>
+    </footer>
+</body>
+
+</html>
