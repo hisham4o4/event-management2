@@ -49,7 +49,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware"
 ]
+
 
 ROOT_URLCONF = "eventmanagement.urls"
 
@@ -76,7 +78,7 @@ WSGI_APPLICATION = "eventmanagement.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url
+    'default': dj_database_url.config(default='postgres://fisatevent_uzpx_user:3xk0vR0WyFjgn7HFdI7qmxLx1YqPGfyh@dpg-ck0nvne3ktkc738kd8v0-a/fisatevent_uzpx')
     # "default": {
 
     # "ENGINE": "django.db.backends.sqlite3",
@@ -120,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
